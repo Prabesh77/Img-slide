@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.holder {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-size: cover;
+}
+
+.active {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  
+}
+
+.holder:nth-child(1) {
+  background: url(https://images.pexels.com/photos/374898/pexels-photo-374898.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260) no-repeat center top/cover;
+}
+
+.holder:nth-child(2) {
+  background: url(https://images.pexels.com/photos/3884/dog-christmas-xmas-bulldog.jpg?auto=compress&cs=tinysrgb&h=750&w=1260) no-repeat center top/cover;
+}
+
+.holder:nth-child(3) {
+  background: url(https://images.pexels.com/photos/1289557/pexels-photo-1289557.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260) no-repeat center top/cover;
+}
+
+.holder:nth-child(4) {
+  background: url(https://images.pexels.com/photos/1726969/pexels-photo-1726969.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500) no-repeat center top/cover;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 50px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.btn:hover {
+   background: #fff;
+}
+
+i {
+  font-size: 50px;
+  color: #333;
+}
+
+
+#next {
+  right: 0;
+}
+
+.contents {
+  height: 150px;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2rem 1rem;
+  font-family: sans-serif;
+  opacity: 0;
+  position: absolute;
+  left: -300px;
+  transition: all 0.4s ease-in-out 0.2s;
+}
+
+.contents {
+  h1 {
+    padding: 10px 0;
+  }
+}
+
+.holder.active .contents {
+  opacity: 1;
+  transform: translateX(300px);
+  transition: all 0.4s ease-in-out 0.2s;
+}
+
+@media(max-width: 750px) {
+  .contents {
+    bottom: -150px;
+    left: 0;
+    width: 100%;
+  }
+
+  .holder.active .contents {
+    transform: translateY(-150px);
+  }
+}
